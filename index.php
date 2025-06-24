@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link href="css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+           background: url('im1.jpg') no-repeat center center fixed;
+            color: #d4d4d4;
+            padding: 17px
+    ;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .navbar {
+            background:url('im1.jpg') no-repeat center center fixed;
+            border-bottom: 2px solid #3794ff;
+        }
+        .navbar-brand {
+    
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+        .navbar-nav {
+            align-items: center;
+        }
+        .navbar-nav .nav-link {
+            color: #d4d4d4 !important;
+            font-weight: 500;
+            margin-left: 1rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: background 0.2s, color 0.2s, border-bottom 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+
+        
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:focus {
+            background: #23272e;
+            color: #61dafb !important;
+            border-bottom: 2px solid #61dafb;
+        }
+        .navbar-nav .nav-link:hover {
+            background: #23272e;
+            color: #3794ff !important;
+            border-bottom: 2px solid #3794ff;
+        }
+        .navbar-toggler {
+            border-color: #61dafb;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(80, 96, 238)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        .hero {
+            background: #23272e;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .hero img {
+            border-radius: 50%;
+            width: 140px;
+            border: 4px solid #3794ff;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #61dafb;
+        }
+        @keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.scrolling-name {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+}
+
+.scrolling-name span {
+    display: inline-block;
+    animation: scrollText 10s linear infinite;
+    padding-left: 100%;
+}
+
+        .service-card {
+            background: #252526;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            color: #d4d4d4;
+            transition: box-shadow .3s, border-color .3s;
+        }
+        .service-card:hover {
+            box-shadow: 0 4px 16px rgba(55,148,255,0.15);
+            border-color: #3794ff;
+        }
+        .progress {
+            background: #333;
+        }
+        .progress-bar.bg-primary { background-color: #3794ff !important; }
+        .progress-bar.bg-success { background-color: #4ec9b0 !important; }
+        .progress-bar.bg-info { background-color: #61dafb !important; }
+        .project img {
+            border-radius: 8px;
+            border: 2px solid #333;
+        }
+        input, textarea, .form-control {
+            background: #23272e !important;
+            color: #d4d4d4 !important;
+            border: 1px solid #333 !important;
+        }
+        input:focus, textarea:focus {
+            border-color: #3794ff !important;
+            box-shadow: 0 0 0 0.2rem rgba(55,148,255,.25) !important;
+        }
+        .btn-primary {
+            background: #3794ff;
+            border: none;
+        }
+        .service-card {
+    height: 300px; /* Fixe une hauteur uniforme pour tous les blocs */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    text-align: center;
+}
+
+.service-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; 
+    border-radius: 8px; 
+}
+        .btn-primary:hover {
+            background: #61dafb;
+            color: #23272e;
+        }
+  .service-card {
+    background: #ffffff; 
+    border: 1px solid #333;
+    border-radius: 10px; 
+    padding: 25px;
+    margin-bottom: 20px;
+    color: #1e1e1e; 
+    transition: box-shadow .3s, border-color .3s;
+}
+      
+
+.progress-bar-rose {
+    background-color: #ff69b4;
+}
+        footer {
+            color: #d4d4d4;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            padding: 20px 0;
+            text-align: center;
+            background: #23272e !important;
+        }
+
+        .project img, .service-card img {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.project img:hover, .service-card img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+.project img {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+}
+
+.project img:hover {
+    transform: scale(1.2); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="#">DFN</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#about">À propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
+                <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero py-2" style="background: url(im3.jpg); color: #d4d4d4; position: relative;">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between" style="position: relative; z-index: 2;">
+        <div class="profile-image-wrapper" style="position: relative; width: 100%; max-width: 300px; margin: 0 auto 20px auto; flex: 1 1 300px;">
+            <div style="background: rgba(255, 105, 180, 0.3); border-radius: 10px; padding: 20px; position: relative;">
+                <img src="naouel.png" alt="Photo de profil" style="
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    border: 4px solid #3794ff;
+                    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+                    border-radius: 10px;
+                ">
+            </div>
+        </div>
+        <div class="hero-text text-center text-lg-end" style="flex: 2 1 400px;">
+            <h1 style="color: #61dafb; font-size: 3rem; font-weight: bold;">DOUNTSOP FEUAKOUE Naouel</h1>
+            <p style="font-size: 1.2rem; color: #d4d4d4;">Administratrice reseau & Developpeuse web</p>
+        </div>
+    </div>
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 105, 180, 0.1); opacity: 0.8; z-index: 1; pointer-events: none;"></div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="container my-5 fade-in">
+    <h2 class="section-title">À propos de moi</h2>
+    <p class="text-center">Etudiante en systeme et réseau à l’IAI-CAMEROUN , j’ai 20 ans et je suis passionnée par les technologies de l’information et spécialisée dans la gestion des infrastructures reseau , dans la meme lancée je suis egalement curieuse et animée par un esprit de creativité pour le developpement cherchant constament a innover et a ameliorer mes competences . Mon dynamisme et ma curiosité me motivent à relever des defis dans ces domaines</p>
+
+    <section id="skills" class="container my-5">
+    <h2 class="section-title">Mes competences</h2>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <p>HTML/CSS/php</p>
+            <div class="progress">
+                  <div class="progress-bar progress-bar-rose" role="progressbar" style="  color: pink; width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p>Suite Office</p>
+            <div class="progress">
+                 <div class="progress-bar progress-bar-rose" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p>Conception graphique</p>
+            <div class="progress">
+                 <div class="progress-bar progress-bar-rose" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+            </div>
+        </div>
+    </div>
+     <div class="row mt-4">
+        <div class="col-md-4">
+            <p>technologies emergentes</p>
+            <div class="progress">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p>  protocoles reseau</p>
+            <div class="progress">
+                 <div class="progress-bar bg-primary" role="progressbar" style="width: 50%;  " aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p>Gestion de base de donnees</p>
+            <div class="progress">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 50%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">50%</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="container my-5 fade-in">
+    <h2 class="section-title">Services</h2>
+    <div class="row text-center">
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="service-card d-flex flex-column justify-content-between">
+                <h4>Sécurité réseau</h4>
+                <div class="mt-3">
+                    <img src="p.png" alt="Securite" class="img-fluid" style="height: 150px; object-fit: cover;">
+                </div>
+                <p><Math></Math>ise en place de mesure de securité pour proteger le reseau contre les attaques.</p>
+            </div>
+        </div>
+
+         <div class="col-md-4">
+            <div class="service-card">
+                <h4>Création de sites web</h4>
+                <div class="mt-3">
+                    <img src="dev.jpg" alt="Création de sites web" class="img-fluid" style="height: 100px; object-fit: cover;">
+                </div>
+                <p>Sites vitrines, blogs, portfolios, e-commerce…</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="service-card">
+                <h4>Responsive Design</h4>
+                <div class="mt-3">
+                    <img src="teeka.jpg" alt="Responsive Design" class="img-fluid" style="height: 100px;">
+                </div>
+                <p>Sites adaptés à tous les écrans (mobile, tablette, desktop).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Projects Section -->
+<section id="projects" class="container my-5 fade-in">
+    <h2 class="section-title">Mes Projets</h2>
+    <div class="row mt-4">
+        <!-- Projet 1 -->
+        <div class="col-md-4 mb-4">
+            <img src="pfsense.jpg" alt="Projet 1" class="img-fluid project" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            <h5 class="mt-3" style="color:#ff69b4">Projet 1</h5>
+            <p>
+                <b style="color: #3794ff; font-size: 25px">Configuration d'un réseau sécurisé avec pfSense</b><br>
+                J'ai réalisé un projet de configuration et gestion d'un réseau sécurisé en utilisant pfSense, une solution open-source de pare-feu et de routage. Ce projet m'a permis de renforcer mes compétences en administration réseau et sécurité informatique.
+            </p>
+            <div class="d-flex gap-3">
+                <a href="https://github.com/votre-utilisateur/pfsense-config" target="_blank" class="btn btn-primary shadow-sm px-4 py-2">
+                    <i class="fab fa-github me-2"></i>Voir le Code
+                </a>
+                <a href="https://demo-votreprojet.com" target="_blank" class="btn btn-secondary shadow-sm px-4 py-2">
+                    <i class="fas fa-desktop me-2"></i>Voir la Démo
+                </a>
+            </div>
+        </div>
+
+        <!-- Projet 2 -->
+        <div class="col-md-4 mb-4">
+            <img src="im5.png" alt="Projet 2" class="img-fluid project" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            <h5 class="mt-3" style="color:#ff69b4">Projet 2</h5>
+            <p>
+                <b style="color: #3794ff; font-size: 25px">Application de gestion de document</b><br>
+              Ce site est une application de gestion de documents, permettant aux utilisateurs de télécharger, organiser et enregistrer des documents en local. Il inclut une interface utilisateur intuitive et des fonctionnalités de recherche . 
+            </p>
+            <div class="d-flex gap-3">
+                <a href="https://github.com/votre-utilisateur/teeka-stock" target="_blank" class="btn btn-primary shadow-sm px-4 py-2">
+                    <i class="fab fa-github me-2"></i>Voir le Code
+                </a>
+                <a href="http://localhost/p/page_d'acceuil.php" target="_blank" class="btn btn-secondary shadow-sm px-4 py-2">
+                    <i class="fas fa-desktop me-2"></i>Voir la Démo
+                </a>
+            </div>
+        </div>
+
+        <!-- Projet 3 -->
+        <div class="col-md-4 mb-4">
+            <img src="livre.png" alt="Projet 3" class="img-fluid project" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            <h5 class="mt-3" style="color:#ff69b4">Projet 3</h5>
+            <p>
+                <b style="color: #3794ff; font-size: 25px">Site web de gestion des bibliotheques en ligne</b><br>
+               Ce site est un projet de gestion de bibliothèque en ligne, permettant aux utilisateurs de consulter et emprunter des livres. Il inclut une interface utilisateur intuitive et une base de données pour la gestion des livres et des utilisateurs.
+            </p>
+            <div class="d-flex gap-3">
+                <a href="https://github.com/votre-utilisateur/projet3-code" target="_blank" class="btn btn-primary shadow-sm px-4 py-2">
+                    <i class="fab fa-github me-2"></i>Voir le Code
+                </a>
+                <a href="http://localhost/site/p.php" target="_blank" class="btn btn-secondary shadow-sm px-4 py-2">
+                    <i class="fas fa-desktop me-2"></i>Voir la Démo
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Personal Qualities Section --><section id="qualities" class="container my-5 fade-in">
+    <h2 class="section-title">Mes Qualités Personnelles</h2>
+    <div class="row text-center">
+      
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4>Créativité</h4>
+            <div class="mt-2">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+            </div>
+              <p>Capacité à trouver des solutions innovantes aux problèmes complexes.</p>
+        </div>
+        <div class="col-md-4">
+                <h4>Organisation</h4>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <p>Gestion efficace du temps et des priorités pour atteindre les objectifs.</p>
+            </div>
+        
+        <div class="col-md-4">
+                <h4>Communication</h4>
+                 <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <p>Facilité à transmettre des idées et à collaborer avec les autres.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog" class="container my-5 fade-in">
+     <h2 class="section-title">BLOG</h2>
+  <div class="container">
+    <h2 class="mb-4 "> Installation de PFSENSE</h2>
+    <p class=" mb-4">
+     "Cette vidéo a été réalisée pour partager mon expertise dans l'installation et la configuration de pfSense, un outil essentiel pour les professionnels cherchant à sécuriser et optimiser leurs infrastructures réseau. Elle s'adresse à ceux qui souhaitent maîtriser les bases ou approfondir leurs compétences en administration réseau."
+
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="ratio ratio-16x9">
+          <iframe
+            src="https://www.youtube.com/embed/ah7FVY-9XkA"
+            title="Installation Pearson"
+            allowfullscreen
+            style="border:none;">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="container my-5 fade-in">
+    <h2 class="section-title ">Contact</h2>
+    <p>Pour toute demande de projet ou collaboration, contactez-moi :</p><br>
+    <form class="row g-3 justify-content-center text-center ">
+        <div class="col-md-6 text-center" >
+            <input type="text" class="form-control" placeholder="Votre nom" required>
+        </div>
+        <div class="col-md-6">
+            <input type="email" class="form-control" placeholder="Votre email" required>
+        </div>
+        <div class="col-12">
+            <textarea class="form-control" rows="4" placeholder="Votre message" required></textarea>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary " style="align-items: center;">Envoyer</button>
+        </div>
+    </form>
+    <section id="contact" class="container my-5 text-center">
+  <h2 class="section-title mb-4">Pour plus d'information</h2>
+
+  <div class="row justify-content-center g-4">
+    <div class="col-12 col-md-4">
+      <div class="contact-item">
+        <i class="fas fa-envelope fa-3x text-primary mb-2"></i>
+        <p class="mb-0">dountsopnaouel@gmail.com</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="contact-item">
+        <i class="fas fa-phone fa-3x text-success mb-2"></i>
+        <p class="mb-0">+237 6 81 45 83 58</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt fa-3x text-danger mb-2"></i>
+        <p class="mb-0">Bafoussam, Cameroun</p>
+      </div>
+    </div>
+  </div>
+
+  ---
+
+  <div class="social-icons mt-5">
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a href="#" class="btn btn-outline-primary btn-social">
+        <i class="fab fa-facebook-f fa-lg"></i>
+      </a>
+      <a href="#" class="btn btn-outline-success btn-social">
+        <i class="fab fa-whatsapp fa-lg"></i>
+      </a>
+      <a href="#" class="btn btn-outline-info btn-social">
+        <i class="fab fa-linkedin-in fa-lg"></i>
+      </a>
+      <a href="#" class="btn btn-outline-secondary btn-social">
+        <i class="fab fa-twitter fa-lg"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .btn-social {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Prevent shrinking on smaller screens */
+  }
+
+  .btn-social:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Adjust gap for very small screens if necessary */
+  @media (max-width: 576px) {
+    .social-icons .gap-3 {
+      gap: 1.5rem !important; /* Slightly larger gap for readability */
+    }
+  }
+</style>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section');
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            section.classList.add('fade-in');
+            observer.observe(section);
+        });
+    });
+</script>
+
+</section>
+<!-- Bootstrap JS local -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
